@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BethanysPieShopStockApp.Utility;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,6 +11,8 @@ namespace BethanysPieShopStockApp.Views
         public PieDetailView()
         {
             InitializeComponent();
+
+            BindingContext = ViewModelLocator.PieDetailViewModel;
         }
     }
 }

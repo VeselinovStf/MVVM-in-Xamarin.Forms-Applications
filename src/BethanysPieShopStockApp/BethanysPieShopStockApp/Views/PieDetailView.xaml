@@ -3,12 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              BackgroundImage="patternwide.png"
              x:Class="BethanysPieShopStockApp.Views.PieDetailView" 
-             xmlns:viewModels="clr-namespace:BethanysPieShopStockApp.ViewModels"
              Title="Bethany's Pie Shop Stock Management"
              Padding="5">
-    <ContentPage.BindingContext>
-        <viewModels:PieDetailsViewModel></viewModels:PieDetailsViewModel>
-    </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView>
             <Grid Grid.Row="1" x:Name="PieGrid">

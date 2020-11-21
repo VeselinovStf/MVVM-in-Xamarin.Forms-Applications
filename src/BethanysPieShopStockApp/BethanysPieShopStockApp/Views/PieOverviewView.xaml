@@ -4,12 +4,8 @@
              
              x:Class="BethanysPieShopStockApp.Views.PieOverviewView"
              BackgroundImage="patternwide.png"
-             xmlns:viewModels="clr-namespace:BethanysPieShopStockApp.ViewModels"
              Title="Bethany's Pie Shop Stock Management"
              >
-    <ContentPage.BindingContext>
-        <viewModels:PieOverviewViewModel></viewModels:PieOverviewViewModel>
-    </ContentPage.BindingContext>
     <Grid>
 
         <Grid.RowDefinitions>
