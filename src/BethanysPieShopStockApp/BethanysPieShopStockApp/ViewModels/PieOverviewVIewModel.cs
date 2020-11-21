@@ -21,6 +21,17 @@ namespace BethanysPieShopStockApp.ViewModels
             LoadPiesListCommand = new Command(OnLoadPiesList);
             AddNewPieCommand = new Command(OnAddNewPie);
             PieSelectedCommand = new Command<Pie>(OnPieSelected);
+
+            MessagingCenter.Subscribe<PieDetailsViewModel, Pie>
+                (this, MessageNames.PieChangedMessage, OnPieChange);
+
+            //MessagingCenter.Subscribe<PieDetailsViewModel>
+            //   (this, MessageNames.PieChangedMessage, ..... );
+        }
+
+        private void OnPieChange(PieDetailsViewModel arg1, Pie arg2)
+        {
+            Pies = new ObservableCollection<Pie>(App.PieDataService.GetPies());
         }
 
         private void OnPieSelected(Pie pie)

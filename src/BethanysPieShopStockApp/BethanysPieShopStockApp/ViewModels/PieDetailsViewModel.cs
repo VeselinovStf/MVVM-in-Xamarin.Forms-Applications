@@ -1,4 +1,5 @@
 ﻿using BethanysPieShopStockApp.Models;
+using BethanysPieShopStockApp.Utility;
 using System;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -27,6 +28,9 @@ namespace BethanysPieShopStockApp.ViewModels
             {
                 App.PieDataService.UpdatePie(SelectedPie);
             }
+
+            MessagingCenter.Send(this, MessageNames.PieChangedMessage, SelectedPie);
+            //MessagingCenter.Send(this, MessageNames.PieChangedMessage);
 
             App.NavigationService.GoBack();
         }
