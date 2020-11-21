@@ -1,8 +1,10 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace BethanysPieShopStockApp.Models
 {
-    public class Pie
+    public class Pie : INotifyPropertyChanged
     {
         private Guid _id;
         private string _pieName;
@@ -14,39 +16,44 @@ namespace BethanysPieShopStockApp.Models
         public Guid Id
         {
             get { return _id; }
-            set { _id = value; }
+            set { _id = value; RaisePropertyChange(); }
         }
      
         public string PieName
         {
             get { return _pieName; }
-            set { _pieName = value; }
+            set { _pieName = value; RaisePropertyChange(); }
         }
        
         public string Description
         {
             get { return _description; }
-            set { _description = value; }
+            set { _description = value; RaisePropertyChange(); }
         }
        
         public double Price
         {
             get { return _price; }
-            set { _price = value; }
+            set { _price = value; RaisePropertyChange(); }
         }
        
         public string ImageUrl
         {
             get { return _imageUrl; }
-            set { _imageUrl = value; }
+            set { _imageUrl = value; RaisePropertyChange(); }
         }
        
         public bool InStock
         {
             get { return _inStock; }
-            set { _inStock = value; }
+            set { _inStock = value; RaisePropertyChange(); }
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
 
+        protected virtual void RaisePropertyChange([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

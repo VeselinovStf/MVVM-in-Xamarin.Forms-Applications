@@ -25,7 +25,7 @@ namespace BethanysPieShopStockApp.Services
 
                 MainPage.Navigation.PushAsync(page);
 
-                //(page.BindingContext as BaseViewModel).Initialize(parameter);
+                (page.BindingContext as BaseViewModel).Initialize(parameter);
             }
             else
             {

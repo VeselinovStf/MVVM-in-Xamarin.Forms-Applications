@@ -23,7 +23,7 @@ namespace BethanysPieShopStockApp
             NavigationService.Configure(ViewNames.PieOverviewView,typeof(PieOverviewView));
             NavigationService.Configure(ViewNames.PieDetailView,typeof(PieDetailView));
 
-            MainPage = new PieOverviewView();
+            MainPage = new NavigationPage(new PieOverviewView());
         }
 
         protected override void OnStart()

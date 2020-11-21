@@ -1,5 +1,6 @@
 ﻿using BethanysPieShopStockApp.Models;
 using BethanysPieShopStockApp.Repositories;
+using BethanysPieShopStockApp.Utility;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -22,14 +23,14 @@ namespace BethanysPieShopStockApp.ViewModels
             PieSelectedCommand = new Command<Pie>(OnPieSelected);
         }
 
-        private void OnPieSelected(Pie obj)
+        private void OnPieSelected(Pie pie)
         {
-            //TODO
+            App.NavigationService.NavigateTo(ViewNames.PieDetailView, pie);
         }
 
         private void OnAddNewPie()
         {
-            //TODO
+            App.NavigationService.NavigateTo(ViewNames.PieDetailView);
         }
 
         private void OnLoadPiesList()

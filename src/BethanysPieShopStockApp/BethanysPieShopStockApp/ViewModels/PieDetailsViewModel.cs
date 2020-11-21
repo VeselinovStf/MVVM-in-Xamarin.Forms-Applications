@@ -1,4 +1,5 @@
 ﻿using BethanysPieShopStockApp.Models;
+using System;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -12,12 +13,22 @@ namespace BethanysPieShopStockApp.ViewModels
         {
             SelectedPie = new Pie();
 
+
             SavePieCommand = new Command(OnSavePie);
         }
 
         private void OnSavePie()
         {
-            //throw new NotImplementedException();
+            if (SelectedPie.Id == Guid.Empty)
+            {
+                App.PieDataService.AddPie(SelectedPie);
+            }
+            else
+            {
+                App.PieDataService.UpdatePie(SelectedPie);
+            }
+
+            App.NavigationService.GoBack();
         }
 
         private Pie _selectedPie;
@@ -29,6 +40,18 @@ namespace BethanysPieShopStockApp.ViewModels
             { 
                 _selectedPie = value;
                 OnPropertyChange(); 
+            }
+        }
+
+        public override void Initialize(object parameter)
+        {
+            if (parameter == null)
+            {
+                SelectedPie = new Pie();
+            }
+            else
+            {
+                SelectedPie = parameter as Pie;
             }
         }
 
