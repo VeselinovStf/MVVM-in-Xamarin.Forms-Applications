@@ -1,7 +1,7 @@
 # MVVM-in-Xamarin.Forms-Applications
 Pluralsight "Applying MVVM in Xamarin.Forms Applications" course repository
 
-![course img]()
+![course img](https://github.com/VeselinovStf/MVVM-in-Xamarin.Forms-Applications/blob/main/repoImg/demo.png)
 
 ### Course Info
 
