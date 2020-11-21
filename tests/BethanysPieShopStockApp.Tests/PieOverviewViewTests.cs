@@ -19,6 +19,18 @@ namespace BethanysPieShopStockApp.Tests
             Assert.NotNull(pieOverviewViewModel.Pies);
         }
 
- 
+        [Fact]
+        public void Pies_Loaded_After_Load_Command()
+        {
+            var mockNavigationService = new Mock<INavigationService>();
+            var mockPieDataService = new MockPieDataService();
+
+            var pieOverviewViewModel = new PieOverviewViewModel(mockPieDataService, mockNavigationService.Object);
+            pieOverviewViewModel.OnLoadPiesList();
+            var pies = pieOverviewViewModel.Pies;
+
+            Assert.NotNull(pieOverviewViewModel.Pies);
+            Assert.Equal(10, pieOverviewViewModel.Pies.Count);
+        }
     }
 }
