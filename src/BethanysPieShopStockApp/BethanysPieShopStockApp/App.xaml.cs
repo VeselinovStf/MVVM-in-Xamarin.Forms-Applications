@@ -1,4 +1,5 @@
 ﻿using BethanysPieShopStockApp.Services;
+using BethanysPieShopStockApp.Utility;
 using BethanysPieShopStockApp.Views;
 using Xamarin.Forms;
 
@@ -12,9 +13,15 @@ namespace BethanysPieShopStockApp
                 new Repositories.PieRepository(
                     new Data.MockDb()));
 
+        public static NavigationService NavigationService = 
+            new NavigationService();
+
         public App()
         {
             InitializeComponent();
+
+            NavigationService.Configure(ViewNames.PieOverviewView,typeof(PieOverviewView));
+            NavigationService.Configure(ViewNames.PieDetailView,typeof(PieDetailView));
 
             MainPage = new PieOverviewView();
         }
