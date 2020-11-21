@@ -1,14 +1,19 @@
 ﻿using BethanysPieShopStockApp.Models;
 using BethanysPieShopStockApp.Services;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace BethanysPieShopStockApp.Repositories
 {
-    public class PieRepository
+    public static class PieRepository
     {
+        public static IList<Pie> GetPies()
+        {
+            return MockDbService.Pies;
+        }
 
-        public void AddPie(Pie pie)
+        public static void AddPie(Pie pie)
         {
             pie.Id = Guid.NewGuid();
             pie.ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/cherrypiesmall.jpg";
@@ -16,7 +21,7 @@ namespace BethanysPieShopStockApp.Repositories
             MockDbService.Pies.Add(pie);
         }
 
-        public void UpdatePie(Pie pie)
+        public static void UpdatePie(Pie pie)
         {
             var oldPie = MockDbService.Pies.Where(p => p.Id == pie.Id).FirstOrDefault();
             oldPie.PieName = pie.PieName;

@@ -17,7 +17,7 @@ namespace BethanysPieShopStockApp.ViewModels
             set 
             { 
                 _selectedPie = value;
-                OnPropertyChange();
+                OnPropertyChange(); 
             }
         }
 

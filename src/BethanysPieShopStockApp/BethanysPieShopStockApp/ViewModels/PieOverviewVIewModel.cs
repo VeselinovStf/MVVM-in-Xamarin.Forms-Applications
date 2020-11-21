@@ -1,17 +1,24 @@
 ﻿using BethanysPieShopStockApp.Models;
+using BethanysPieShopStockApp.Repositories;
+using System;
 using System.Collections.ObjectModel;
 
 namespace BethanysPieShopStockApp.ViewModels
 {
-    public class PieOverviewVIewModel : BaseViewModel
+    public class PieOverviewViewModel : BaseViewModel
     {
         private ObservableCollection<Pie> _pies;
 
-        public PieOverviewVIewModel()
-        {
-            Pies = new ObservableCollection<Pie>();
+        public PieOverviewViewModel()
+        {           
+            Initialize();
         }
-       
+
+        private void Initialize()
+        {
+            Pies = new ObservableCollection<Pie>(PieRepository.GetPies());
+        }
+
         public ObservableCollection<Pie> Pies
         {
             get { return _pies; }
