@@ -16,6 +16,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\" />
+    <EmbeddedResource Update="Views\PieDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PieOverviewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
