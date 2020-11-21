@@ -34,7 +34,7 @@ namespace BethanysPieShopStockApp.ViewModels
 
         private void OnLoadPiesList()
         {
-            Pies = new ObservableCollection<Pie>(PieRepository.GetPies());
+            Pies = new ObservableCollection<Pie>(App.PieDataService.GetPies());
         }
 
         public ObservableCollection<Pie> Pies
