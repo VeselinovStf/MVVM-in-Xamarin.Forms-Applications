@@ -1,6 +1,8 @@
 # MVVM-in-Xamarin.Forms-Applications
 Pluralsight "Applying MVVM in Xamarin.Forms Applications" course repository
 
+![course img]()
+
 ### Course Info
 
 - Learn how to create your Xamarin.Forms applications using the MVVM (View Model) pattern to create a more testable and easy-to-maintain code base.
@@ -26,3 +28,5 @@ Pluralsight "Applying MVVM in Xamarin.Forms Applications" course repository
 #### Duration: 1h 58m
 
 ## Status
+
+- Complete
