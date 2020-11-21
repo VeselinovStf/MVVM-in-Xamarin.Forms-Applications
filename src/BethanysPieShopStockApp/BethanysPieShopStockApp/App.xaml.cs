@@ -1,12 +1,17 @@
-﻿using BethanysPieShopStockApp.Views;
-using System;
+﻿using BethanysPieShopStockApp.Services;
+using BethanysPieShopStockApp.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace BethanysPieShopStockApp
 {
     public partial class App : Application
     {
+        //NOTE: Intentionally not using DI
+        public static PieDataService PieDataService = 
+            new PieDataService(
+                new Repositories.PieRepository(
+                    new Data.MockDb()));
+
         public App()
         {
             InitializeComponent();

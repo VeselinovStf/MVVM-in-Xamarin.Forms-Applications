@@ -2,13 +2,14 @@
 using System;
 using System.Collections.Generic;
 
-namespace BethanysPieShopStockApp.Services
+namespace BethanysPieShopStockApp.Data
 {
-    public static class MockDbService
+    //Mock Database
+    public class MockDb
     {
-        private static IList<Pie> _pies;
+        private IList<Pie> _pies;
 
-        public static IList<Pie> Pies
+        public IList<Pie> Pies
         {
             get 
             {
@@ -22,7 +23,7 @@ namespace BethanysPieShopStockApp.Services
             set { _pies = value; }
         }
 
-        private static void LoadPies()
+        private void LoadPies()
         {
             _pies = new List<Pie>
                 {
