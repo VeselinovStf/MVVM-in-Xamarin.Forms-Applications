@@ -1,5 +1,6 @@
 ﻿using BethanysPieShopStockApp.Models;
 using BethanysPieShopStockApp.Repositories;
+using BethanysPieShopStockApp.Services;
 using BethanysPieShopStockApp.Utility;
 using System;
 using System.Collections.ObjectModel;
@@ -11,13 +12,20 @@ namespace BethanysPieShopStockApp.ViewModels
     public class PieOverviewViewModel : BaseViewModel
     {
         private ObservableCollection<Pie> _pies;
+        private readonly IPieDataService _pieDataService;
+        private readonly INavigationService _navigationService;
 
         public ICommand LoadPiesListCommand { get; }
         public ICommand AddNewPieCommand { get; }
         public ICommand PieSelectedCommand { get; }
 
-        public PieOverviewViewModel()
+        public PieOverviewViewModel(
+            IPieDataService pieDataService, 
+            INavigationService navigationService)
         {
+            _pieDataService = pieDataService;
+            _navigationService = navigationService;
+
             LoadPiesListCommand = new Command(OnLoadPiesList);
             AddNewPieCommand = new Command(OnAddNewPie);
             PieSelectedCommand = new Command<Pie>(OnPieSelected);
@@ -25,28 +33,29 @@ namespace BethanysPieShopStockApp.ViewModels
             MessagingCenter.Subscribe<PieDetailsViewModel, Pie>
                 (this, MessageNames.PieChangedMessage, OnPieChange);
 
+
             //MessagingCenter.Subscribe<PieDetailsViewModel>
             //   (this, MessageNames.PieChangedMessage, ..... );
         }
 
         private void OnPieChange(PieDetailsViewModel arg1, Pie arg2)
         {
-            Pies = new ObservableCollection<Pie>(App.PieDataService.GetPies());
+            Pies = new ObservableCollection<Pie>(_pieDataService.GetPies());
         }
 
         private void OnPieSelected(Pie pie)
         {
-            App.NavigationService.NavigateTo(ViewNames.PieDetailView, pie);
+            _navigationService.NavigateTo(ViewNames.PieDetailView, pie);
         }
 
         private void OnAddNewPie()
         {
-            App.NavigationService.NavigateTo(ViewNames.PieDetailView);
+            _navigationService.NavigateTo(ViewNames.PieDetailView);
         }
 
         private void OnLoadPiesList()
         {
-            Pies = new ObservableCollection<Pie>(App.PieDataService.GetPies());
+            Pies = new ObservableCollection<Pie>(_pieDataService.GetPies());
         }
 
         public ObservableCollection<Pie> Pies

@@ -18,6 +18,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BethanysPieShopStockApp.iOS
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{8C0E017F-FB57-44B8-970F-E0340D39A8F4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D38646B0-13A7-4EE4-ACF5-6DEF5A030B5D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShopStockApp.Tests", "tests\BethanysPieShopStockApp.Tests\BethanysPieShopStockApp.Tests.csproj", "{9CF43845-416F-4F4C-BBFF-51F85F52B3D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +72,18 @@ Global
 		{C8ADFD36-4321-4404-81B7-F2682CE05E80}.Release|iPhone.Build.0 = Release|iPhone
 		{C8ADFD36-4321-4404-81B7-F2682CE05E80}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{C8ADFD36-4321-4404-81B7-F2682CE05E80}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{9CF43845-416F-4F4C-BBFF-51F85F52B3D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CF43845-416F-4F4C-BBFF-51F85F52B3D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CF43845-416F-4F4C-BBFF-51F85F52B3D9}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{9CF43845-416F-4F4C-BBFF-51F85F52B3D9}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{9CF43845-416F-4F4C-BBFF-51F85F52B3D9}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{9CF43845-416F-4F4C-BBFF-51F85F52B3D9}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{9CF43845-416F-4F4C-BBFF-51F85F52B3D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CF43845-416F-4F4C-BBFF-51F85F52B3D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CF43845-416F-4F4C-BBFF-51F85F52B3D9}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{9CF43845-416F-4F4C-BBFF-51F85F52B3D9}.Release|iPhone.Build.0 = Release|Any CPU
+		{9CF43845-416F-4F4C-BBFF-51F85F52B3D9}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{9CF43845-416F-4F4C-BBFF-51F85F52B3D9}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +93,7 @@ Global
 		{13ABC5D2-09DA-4CD0-8940-4D58C7EFA60E} = {8C0E017F-FB57-44B8-970F-E0340D39A8F4}
 		{C8ADFD36-4321-4404-81B7-F2682CE05E80} = {8C0E017F-FB57-44B8-970F-E0340D39A8F4}
 		{8C0E017F-FB57-44B8-970F-E0340D39A8F4} = {861480FD-0D43-4EC8-8B57-E21802B4B50A}
+		{9CF43845-416F-4F4C-BBFF-51F85F52B3D9} = {D38646B0-13A7-4EE4-ACF5-6DEF5A030B5D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E1040E8-5B44-4357-8FE7-AC9C5D1B869C}
