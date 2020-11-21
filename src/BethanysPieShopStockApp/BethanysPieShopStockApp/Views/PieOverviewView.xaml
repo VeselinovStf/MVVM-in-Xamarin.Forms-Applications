@@ -13,8 +13,8 @@
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" Text="Load pies" ></Button>
-        <Button Grid.Row="1" Text="Add new pie"  ></Button>
+        <Button Grid.Row="0" Text="Load pies" Command="{Binding LoadPiesListCommand}" ></Button>
+        <Button Grid.Row="1" Text="Add new pie"  Command="{Binding AddNewPieCommand}" ></Button>
 
         <ListView HasUnevenRows="True" Grid.Row="2" ItemsSource="{Binding Pies}"
               x:Name="PiesListView" CachingStrategy="RecycleElement"  >

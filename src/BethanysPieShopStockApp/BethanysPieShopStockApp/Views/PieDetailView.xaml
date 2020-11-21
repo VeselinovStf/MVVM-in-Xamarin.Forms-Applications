@@ -72,7 +72,7 @@
                    IsToggled="{Binding SelectedPie.InStock, Mode=TwoWay}"
                    ></Switch>
                 <Button x:Name="SavePieButton" 
-                    
+                    Command="{Binding SavePieCommand}"
                     Text="Save Pie" 
                     Style="{StaticResource RegularButtonStyle}" 
                     Grid.Row="6" 

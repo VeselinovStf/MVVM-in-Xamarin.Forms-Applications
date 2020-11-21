@@ -1,7 +1,8 @@
 ﻿using BethanysPieShopStockApp.Models;
 using BethanysPieShopStockApp.Repositories;
-using System;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace BethanysPieShopStockApp.ViewModels
 {
@@ -9,12 +10,21 @@ namespace BethanysPieShopStockApp.ViewModels
     {
         private ObservableCollection<Pie> _pies;
 
+        public ICommand LoadPiesListCommand { get; }
+        public ICommand AddNewPieCommand { get; }
+
         public PieOverviewViewModel()
-        {           
-            Initialize();
+        {
+            LoadPiesListCommand = new Command(OnLoadPiesList);
+            AddNewPieCommand = new Command(OnAddNewPie);          
         }
 
-        private void Initialize()
+        private void OnAddNewPie()
+        {
+            //TODO
+        }
+
+        private void OnLoadPiesList()
         {
             Pies = new ObservableCollection<Pie>(PieRepository.GetPies());
         }
