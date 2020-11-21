@@ -4,9 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:converter="clr-namespace:BethanysPieShopStockApp.Converter"
              x:Class="BethanysPieShopStockApp.App">
     <Application.Resources>
-
+        <converter:ItemTappedConverter x:Key="LocalItemTappedConverter"></converter:ItemTappedConverter>
         <Color x:Key="BethanysGreenColor">#22cfa7</Color>
         
         <Style x:Key="RegularButtonStyle" TargetType="Button">
